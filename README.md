@@ -12,7 +12,7 @@ with employee job satisfaction using KNIME.
 
 | Member Name | Key Responsibilities | Deliverables/Nodes Owned | Percentage Effort |
 | --- | --- | --- | --- |
-| Gregory Opie | Data profiling, preparation, analysis, visualization, and documentation | Week 2: CSV Reader, Statistics, GroupBy nodes, Bar Charts, audit report, and checklist. Week 3: Binner, three Rule Engines, two One to Many nodes, Number to String, preparation Metanode, CSV Writer, and Boolean matrix. | 100% |
+| Gregory Opie | Data profiling, preparation, analysis, visualization, and documentation | Week 2: CSV Reader, Statistics, GroupBy nodes, Bar Charts, audit report, and checklist. Week 3: Binner, three Rule Engines, two One to Many nodes, Number to String, preparation Metanode, CSV Writer, and Boolean matrix. Week 4: Create Bit Vector, Association Rule Learner (Borgelt), Row Filter, Sorter, Column Combiner, association mining Metanode, CSV Writer, and exported rules. | 100% |
 
 ### Week 2 Progress
 
@@ -35,10 +35,31 @@ with employee job satisfaction using KNIME.
   or values other than 0 and 1.
 - Uploaded the Week 3 workflow and Boolean matrix.
 
+### Week 4 Progress
+
+- Used Create Bit Vector to combine the 39 Boolean columns into
+  a BitVector using a global threshold of 1.
+- Used Association Rule Learner (Borgelt) with 5% minimum antecedent
+  support, 70% minimum confidence, and set sizes of 2–3.
+- Generated 75 association rules.
+- Used Row Filter to retain LeftCompany outcomes with whole-rule
+  support of at least 5%, leaving five rules.
+- Used Sorter to rank the rules by lift descending,
+  then confidence descending.
+- The highest-ranked rule connects two projects and low satisfaction
+  with LeftCompany, with 10.227% support, 83.8% confidence,
+  and 3.521 lift.
+- Added explanatory node comments and grouped the pipeline into
+  the Week 4 Association Mining Metanode.
+- Used Column Combiner to convert the Antecedent list into text
+  for CSV export.
+- Exported and uploaded Employee_Retention_Week4.knwf and
+  Employee_Retention_Week4_Rules.csv.
+
 ## 2. Version Control and Infrastructure
 
 - **Primary Communication Platform:** Individual project; progress documented in this README.
-- **Weekly Sync Time:** [Enter your weekly review day and time.]
+- **Weekly Sync Time:** Tuesday's
 - **GitHub Repository:** https://github.com/xlopie/Employee-Retention-Analysis
 
 ## 3. Workflow Documentation
@@ -62,6 +83,20 @@ WorkAccident, LeftCompany, and PromotionLast5years remain as existing
 binary indicators. CSV Writer exports the final 14,999-row,
 39-column Boolean matrix with headers and without RowIDs.
 
+The Week 4 Association Mining Metanode receives the Boolean matrix.
+Create Bit Vector packages the indicators into a BitVector.
+Association Rule Learner (Borgelt) generates rules using the
+configured support, confidence, and set-size settings.
+
+Row Filter retains rules with Consequent equal to LeftCompany
+and whole-rule support of at least 5%. Sorter ranks the five
+remaining rules by lift, then confidence, both descending.
+
+Column Combiner converts the Antecedent collection into
+Antecedent_Text and removes the original collection column.
+CSV Writer exports the ranked rules with headers, without RowIDs,
+and with Overwrite enabled.
+
 ### Key Annotations
 
 - Salary Distribution, Promotion Distribution, and Work Accident
@@ -69,7 +104,10 @@ binary indicators. CSV Writer exports the final 14,999-row,
 - Comments explain each Week 3 preparation step.
 - The Week 3 Boolean Data Preparation Metanode has a comment
   summarizing binning, labeling, and encoding.
-- The CSV Writer comment explains the export settings.
+- Week 4 node comments explain BitVector creation, rule generation,
+  filtering, sorting, text conversion, and export.
+- The Week 4 Association Mining Metanode comment summarizes
+  the mining pipeline and retained rules.
 
 ### Known Limitations
 
@@ -78,10 +116,12 @@ binary indicators. CSV Writer exports the final 14,999-row,
 - Binary coding meanings and tenure units need confirmation.
 - Low, Avg, and High bins represent relative groups within this dataset,
   rather than established HR thresholds.
-- Data distributions and association rules do not establish causation.
+- Association rules describe patterns in the current dataset;
+  they do not establish causation or guarantee future outcomes.
+- Several retained rules may describe overlapping groups of records.
 - File paths may need updating when running on another computer.
-- Binning and Boolean encoding are complete. Association rule mining
-  and evaluation are planned for later milestones.
+- Data preparation and association mining are complete.
+  Further evaluation and sensitivity checks remain for Week 5.
 
 ## 4. Individual Agreement and Attestation
 
