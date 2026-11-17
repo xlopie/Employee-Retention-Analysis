@@ -60,3 +60,19 @@ logic still need to be added as workflow or Metanode annotations.
 
 **Name:** Gregory Opie
 **Signature/confirmation:** G.Opie
+
+### Week 3 Progress
+
+- Used Binner to create three equal-frequency bins for satisfaction,
+  evaluation, and average monthly hours.
+- Used three Rule Engine nodes to label bins Low, Avg, and High.
+- Used One to Many to encode categorical features as 0/1 indicators.
+- Converted project counts and tenure to categories and encoded them.
+- Grouped preparation nodes into an annotated Metanode.
+- Successfully reran the preparation branch and exported the CSV.
+- Validated 14,999 rows and 39 columns with no missing values
+  or values other than 0 and 1.
+- Uploaded the Week 3 workflow and Boolean matrix.
+
+**Contributor:** Gregory Opie
+**Percentage effort:** 100%
