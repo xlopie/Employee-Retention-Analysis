@@ -1,0 +1,6 @@
+"Consequent","ItemSetSupport","RelativeItemSetSupport%","RuleConfidence%","AbsoluteBodySetSupport","RelativeBodySetSupport%","RuleLift","RuleLift%","AbsoluteHeadItemSupport","RelativeHeadItemSupport%","Antecedent_Text"
+"LeftCompany",1534,10.227,83.8,1830,12.2,3.5208,352.08,3571,23.808,"""[2_NumberProject, Low_SatisfactionLevel]"""
+"LeftCompany",1528,10.187,82.4,1854,12.4,3.4617,346.17,3571,23.808,"""[2_NumberProject, 3_TimeSpendCompany]"""
+"LeftCompany",1528,10.187,82.2,1860,12.4,3.4505,345.05,3571,23.808,"""[2_NumberProject, Low_AverageMonthlyHours]"""
+"LeftCompany",1531,10.207,81.8,1871,12.5,3.437,343.7,3571,23.808,"""[2_NumberProject, Low_LastEvaluation]"""
+"LeftCompany",966,6.4404,71.9,1344,8.96,3.0189,301.89,3571,23.808,"""[2_NumberProject, low]"""
