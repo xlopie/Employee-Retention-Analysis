@@ -1,16 +1,18 @@
-# Employee-Retention-Analysis
-Introduction to Data Mining project analyzing patterns associated with employee job satisfaction using KNIME.
 # Employee Retention and Job Satisfaction Analysis
 
-**Group:** Individual project — Gregory Opie
-**Course:** Introduction to Data Mining
-**Software:** KNIME
+Introduction to Data Mining project analyzing patterns associated
+with employee job satisfaction using KNIME.
+
+- **Student:** Gregory Opie
+- **Project format:** Individual
+- **Course:** Introduction to Data Mining
+- **Software:** KNIME
 
 ## 1. Contribution Log
 
 | Member Name | Key Responsibilities | Deliverables/Nodes Owned | Percentage Effort |
 | --- | --- | --- | --- |
-| Gregory Opie | All project responsibilities, including data profiling, preparation, analysis, visualization, and documentation | Week 2: CSV Reader, Statistics, three GroupBy nodes, three Bar Chart nodes, data audit report, and weekly checklist | 100% |
+| Gregory Opie | Data profiling, preparation, analysis, visualization, and documentation | Week 2: CSV Reader, Statistics, GroupBy nodes, Bar Charts, audit report, and checklist. Week 3: Binner, three Rule Engines, two One to Many nodes, Number to String, preparation Metanode, CSV Writer, and Boolean matrix. | 100% |
 
 ### Week 2 Progress
 
@@ -20,51 +22,10 @@ Introduction to Data Mining project analyzing patterns associated with employee 
 - Identified 3,008 repeated rows for further investigation.
 - Uploaded the dataset, exported KNIME workflow, and audit report.
 
-## 2. Version Control and Infrastructure
-
-- **Primary Communication Platform:** Individual project; progress documented in this README.
-- **Weekly Sync Time:** Week 2
-- **GitHub Repository:** https://github.com/xlopie/Employee-Retention-Analysis
-
-## 3. Workflow Documentation
-
-### KNIME Workflow Overview
-
-The current Week 2 workflow loads JobSatisfaction.csv using CSV Reader.
-Statistics summarizes the dataset. Three separate GroupBy branches
-count records by Salary, PromotionLast5years, and WorkAccident.
-Each branch connects to a Bar Chart.
-
-### Key Annotations
-
-The current workflow contains these branch labels:
-
-1. Salary Distribution
-2. Promotion Distribution
-3. Work Accident Distribution
-
-These are node comments. Detailed explanations of the processing
-logic still need to be added as workflow or Metanode annotations.
-
-### Known Limitations
-
-- Identical rows cannot automatically be treated as duplicate employees
-  because the dataset does not contain employee IDs.
-- Binary coding meanings and tenure units need confirmation.
-- Week 2 describes distributions; it does not establish causes of
-  dissatisfaction.
-- Binning, Boolean encoding, and association rule mining are planned
-  for later milestones.
-
-## 4. Individual Agreement and Attestation
-
-**Name:** Gregory Opie
-**Signature/confirmation:** G.Opie
-
 ### Week 3 Progress
 
-- Used Binner to create three equal-frequency bins for satisfaction,
-  evaluation, and average monthly hours.
+- Used Binner to create three equal-frequency bins for SatisfactionLevel,
+  LastEvaluation, and AverageMonthlyHours.
 - Used three Rule Engine nodes to label bins Low, Avg, and High.
 - Used One to Many to encode categorical features as 0/1 indicators.
 - Converted project counts and tenure to categories and encoded them.
@@ -74,5 +35,56 @@ logic still need to be added as workflow or Metanode annotations.
   or values other than 0 and 1.
 - Uploaded the Week 3 workflow and Boolean matrix.
 
-**Contributor:** Gregory Opie
-**Percentage effort:** 100%
+## 2. Version Control and Infrastructure
+
+- **Primary Communication Platform:** Individual project; progress documented in this README.
+- **Weekly Sync Time:** [Enter your weekly review day and time.]
+- **GitHub Repository:** https://github.com/xlopie/Employee-Retention-Analysis
+
+## 3. Workflow Documentation
+
+### KNIME Workflow Overview
+
+The workflow loads JobSatisfaction.csv using CSV Reader.
+
+The Week 2 branches provide statistical summaries and distribution
+charts for salary, promotions, and workplace accidents.
+
+The Week 3 Boolean Data Preparation Metanode uses Binner to create
+three equal-frequency bins for satisfaction, evaluation, and monthly
+hours. Three Rule Engines assign descriptive labels.
+
+One to Many encodes the labeled bins, department, and salary.
+Number to String converts project counts and tenure into categories,
+which a second One to Many node encodes.
+
+WorkAccident, LeftCompany, and PromotionLast5years remain as existing
+binary indicators. CSV Writer exports the final 14,999-row,
+39-column Boolean matrix with headers and without RowIDs.
+
+### Key Annotations
+
+- Salary Distribution, Promotion Distribution, and Work Accident
+  Distribution identify the Week 2 chart branches.
+- Comments explain each Week 3 preparation step.
+- The Week 3 Boolean Data Preparation Metanode has a comment
+  summarizing binning, labeling, and encoding.
+- The CSV Writer comment explains the export settings.
+
+### Known Limitations
+
+- Identical rows cannot automatically be treated as duplicate employees
+  because the dataset does not contain employee IDs.
+- Binary coding meanings and tenure units need confirmation.
+- Low, Avg, and High bins represent relative groups within this dataset,
+  rather than established HR thresholds.
+- Data distributions and association rules do not establish causation.
+- File paths may need updating when running on another computer.
+- Binning and Boolean encoding are complete. Association rule mining
+  and evaluation are planned for later milestones.
+
+## 4. Individual Agreement and Attestation
+
+**Name:** Gregory Opie
+
+**Signature/confirmation:** G.Opie
